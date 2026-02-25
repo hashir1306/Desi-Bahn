@@ -189,6 +189,10 @@ h6 {
     color: var(--black);
 }
 
+.menu-toggle {
+    display: none;
+}
+
 /* Showreel Section / Scroll Indicator */
 
 
@@ -1237,17 +1241,13 @@ h6 {
         padding: 20px var(--pad-x);
     }
 
-    .nav-links {
-        display: none;
-        /* Hide on mobile for simplicity, or handle with a menu */
-    }
-
     .menu-toggle {
         display: block;
         width: 30px;
         height: 20px;
         position: relative;
         cursor: pointer;
+        z-index: 1001;
     }
 
     .menu-toggle .bar {
@@ -1256,7 +1256,7 @@ h6 {
         height: 2px;
         background: var(--white);
         left: 0;
-        transition: 0.3s;
+        transition: all 0.3s ease;
     }
 
     .menu-toggle .bar:nth-child(1) {
@@ -1265,6 +1265,40 @@ h6 {
 
     .menu-toggle .bar:nth-child(2) {
         bottom: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--black);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transform: translateY(-100%);
+        transition: transform 0.4s ease;
+        z-index: 1000;
+        display: flex;
+        /* Override display: none from earlier */
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
     }
 }
 
