@@ -28,18 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
         )
         .set(".preloader", { display: "none" });
 
-    // Parallax background scale effect
-    gsap.to(".hero-bg", {
-        scale: 1.1,
-        ease: "none",
-        scrollTrigger: {
-            trigger: ".hero",
-            start: "top top",
-            end: "bottom top",
-            scrub: true
-        }
-    });
-
     // Entrance Animation
     tl.to(".sub-headline", {
         y: 0,

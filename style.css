@@ -189,25 +189,9 @@ h6 {
     color: var(--black);
 }
 
-/* Showreel Section - Premium Setup */
-.showreel {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    background-color: var(--black);
-    overflow: hidden;
-}
+/* Showreel Section / Scroll Indicator */
 
-.showreel-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
-    z-index: 1;
-    pointer-events: none;
-}
+
 
 .showreel-scroll-indicator {
     position: absolute;
@@ -302,19 +286,15 @@ h6 {
     padding-bottom: 80px;
 }
 
-.hero-bg {
+.hero-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: cover;
+    display: block;
     z-index: 0;
-    filter: brightness(0.6) contrast(1.1);
-    transform: scale(1.05);
-    transition: transform 1.5s ease-out;
 }
 
 .hero-overlay {
@@ -323,8 +303,19 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.95) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 100%);
     z-index: 1;
+}
+
+.hero.left-align {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.hero.left-align .hero-content {
+    align-items: flex-start;
+    margin-left: 5%;
+    /* Pushes text slightly off the literal edge */
 }
 
 .hero-content {
@@ -370,6 +361,10 @@ h6 {
     margin: 0 auto 40px auto;
     color: rgba(255, 255, 255, 0.75);
     font-weight: 400;
+}
+
+.hero.left-align .hero-desc {
+    margin: 0 0 40px 0;
 }
 
 .hero-impact {
@@ -1171,6 +1166,57 @@ h6 {
 
     .services-image-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Fixed alignment and padding for Hero Section on mobile */
+    .hero.left-align .hero-content {
+        align-items: center;
+        text-align: center;
+        margin-left: 0;
+        padding-top: 40px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .main-headline {
+        font-size: clamp(2.1rem, 7vw, 3rem);
+        /* Smaller on mobile to prevent clipping */
+        letter-spacing: 1px;
+    }
+
+    .sub-headline {
+        letter-spacing: 5px;
+        /* Tighter letter spacing to prevent overflow */
+    }
+
+    .hero.left-align .hero-desc {
+        margin: 0 auto 30px auto;
+        text-align: center;
+    }
+
+    /* Compact scroll text for mobile to prevent overflow */
+    .showreel-scroll-text {
+        letter-spacing: 2px;
+        font-size: 0.65rem;
+    }
+
+    /* Better spacing inside padded sections */
+    .pad-section {
+        padding: 60px 0;
+    }
+
+    /* Override any specific large paddings */
+    .who-we-are {
+        padding-top: 80px;
+    }
+
+    /* Reduce card internal padding on mobile */
+    .module-card {
+        padding: 30px 20px;
+    }
+
+    .expertise-card {
+        padding: 25px 20px;
     }
 
     .contact-container {
