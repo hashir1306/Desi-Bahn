@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Preloader Animation
     tl.fromTo(".preloader-text",
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }
+        { opacity: 0, scale: 0.8, letterSpacing: "40px", filter: "blur(10px)" },
+        { opacity: 1, scale: 1, letterSpacing: "15px", filter: "blur(0px)", duration: 1.6, ease: "power4.out" }
     )
         .to(".preloader-text",
-            { opacity: 0, y: -20, duration: 0.8, ease: "power3.in", delay: 1 }
+            { opacity: 0, scale: 1.1, letterSpacing: "25px", filter: "blur(5px)", duration: 0.8, ease: "power3.in", delay: 0.8 }
         )
         .to(".preloader",
             { y: "-100%", duration: 1.2, ease: "power4.inOut" }

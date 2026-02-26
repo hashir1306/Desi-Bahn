@@ -6,8 +6,8 @@
     --white: #ffffff;
     --grey: #888888;
 
-    --font-heading: 'Cinzel', serif;
-    --font-body: 'Cinzel', serif;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
     --pad-x: 5vw;
     --pad-y: 120px;
 }
@@ -155,7 +155,7 @@ h6 {
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 4px;
-    color: var(--white);
+    color: var(--gold);
 }
 
 .nav-links {
@@ -476,10 +476,7 @@ h6 {
 
 .who-we-are .section-title {
     font-size: clamp(2.5rem, 4.5vw, 3.8rem);
-    background: linear-gradient(180deg, var(--white) 0%, rgba(255, 255, 255, 0.4) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--gold);
     margin-bottom: 30px;
     letter-spacing: 4px;
 }
@@ -1033,6 +1030,7 @@ h6 {
     font-size: clamp(2rem, 4vw, 3.5rem);
     letter-spacing: 2px;
     margin-bottom: 5px;
+    color: var(--gold);
 }
 
 .contact-hubs {
@@ -1040,6 +1038,15 @@ h6 {
     letter-spacing: 3px;
     color: var(--white);
     opacity: 0.8;
+}
+
+.contact-intro {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: var(--font-heading);
+    margin-top: 35px;
+    max-width: 500px;
 }
 
 .contact-region {
