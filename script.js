@@ -185,9 +185,47 @@ document.addEventListener("DOMContentLoaded", () => {
             stagger: 0.2,
             ease: "power2.out",
             scrollTrigger: {
-                trigger: ".expertise-grid",
+                trigger: ".portfolio-grid, .expertise-grid", // Updated to trigger on both portfolio and expertise
                 start: "top 80%",
             }
         }
     );
+
+    // Initialize Swiper for Videography Portfolio
+    const videoSwiper = new Swiper('.video-swiper', {
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        spaceBetween: 30,
+        loop: true,
+        speed: 600,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            // Adjust space between slides on smaller screens
+            320: {
+                spaceBetween: 15
+            },
+            768: {
+                spaceBetween: 30
+            }
+        }
+    });
+
+    // Optional: Auto-play the active video and pause others
+    videoSwiper.on('slideChangeTransitionEnd', function () {
+        const slides = document.querySelectorAll('.video-swiper .swiper-slide video');
+        slides.forEach(v => v.pause());
+        const activeSlide = document.querySelector('.video-swiper .swiper-slide-active video');
+        if (activeSlide) {
+            // Reset active video to start and play
+            activeSlide.currentTime = 0;
+            activeSlide.play().catch(e => console.log("Auto-play prevented"));
+        }
+    });
 });

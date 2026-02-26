@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- GSAP for advanced animations -->
@@ -77,19 +79,22 @@
             <div class="vert-line scroll-anim-line"></div>
         </div>
         <div class="container text-center">
-            <h2 class="section-title fade-up">Who We Are</h2>
-            <p class="section-body fade-up delay-1">
-                We are a full-service media production company specializing in visual storytelling for brands,
-                businesses, and individuals. Our team combines creative direction with technical excellence to deliver
-                stunning visuals that connect with audiences and elevate brand presence.<br><br>
-                With international experience and multicultural expertise, we handle projects of every scale — from
-                intimate events to large commercial productions.
-            </p>
-            <div style="margin-top: 50px;">
-                <a href="expertise.html" class="hero-impact fade-up delay-2">
-                    <span class="btn-main-text">Our Expertise</span>
-                    <span class="btn-hint">click to view</span>
-                </a>
+            <div class="mobile-text-wrapper">
+                <h2 class="section-title fade-up">Who We Are</h2>
+                <p class="section-body fade-up delay-1">
+                    We are a full-service media production company specializing in visual storytelling for brands,
+                    businesses, and individuals. Our team combines creative direction with technical excellence to
+                    deliver
+                    stunning visuals that connect with audiences and elevate brand presence.<br><br>
+                    With international experience and multicultural expertise, we handle projects of every scale — from
+                    intimate events to large commercial productions.
+                </p>
+                <div style="margin-top: 50px;">
+                    <a href="expertise.html" class="hero-impact fade-up delay-2">
+                        <span class="btn-main-text">Our Expertise</span>
+                        <span class="btn-hint">click to view</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -99,7 +104,10 @@
         <div class="container-fluid" style="padding: 0 5vw;">
             <div class="portfolio-header"
                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
-                <h2 class="section-title fade-up" style="margin-bottom: 0;">Photography Portfolio</h2>
+                <h2 class="section-title fade-up"
+                    style="margin-bottom: 0; color: var(--gold); font-size: clamp(1.8rem, 3.5vw, 2.5rem);">Photography
+                    Portfolio
+                </h2>
                 <div class="portfolio-signature fade-in delay-2" style="display: flex; align-items: center; gap: 15px;">
                     <div style="width: 50px; height: 1px; background: rgba(255,255,255,0.3);"></div>
                     <span
@@ -173,10 +181,54 @@
         </div>
     </section>
 
+    <!-- Videography Portfolio -->
+    <section class="video-portfolio pad-section" id="videography">
+        <div class="container-fluid" style="overflow: hidden; padding: 0 5vw;">
+            <div class="portfolio-header"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; flex-wrap: wrap; gap: 20px;">
+                <h2 class="section-title fade-up"
+                    style="margin-bottom: 0; color: var(--gold); font-size: clamp(1.8rem, 3.5vw, 2.5rem);">Videography
+                    Portfolio
+                </h2>
+                <div class="portfolio-signature fade-in delay-2" style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 50px; height: 1px; background: rgba(255,255,255,0.3);"></div>
+                    <span
+                        style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--white); opacity: 0.8; letter-spacing: 4px;">DESI
+                        BAHN</span>
+                </div>
+            </div>
+            <div class="swiper video-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <video src="video1.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="video3.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="video4.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="video5.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                    </div>
+                    <div class="swiper-slide">
+                        <video src="video6.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                    </div>
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Our Vision -->
     <section class="vision pad-section" id="vision">
         <div class="container flex-center">
-            <div class="vision-text-wrapper">
+            <div class="vision-text-wrapper mobile-text-wrapper">
                 <div class="watermark-text" aria-hidden="true">VISION</div>
                 <h2 class="section-title slide-right">Our Vision</h2>
                 <div class="gold-separator fade-in"></div>
@@ -283,6 +335,8 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 

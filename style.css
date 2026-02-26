@@ -517,6 +517,26 @@ h6 {
     margin-top: 30px;
 }
 
+/* Mobile Text Wrapper with Transparent Border */
+.mobile-text-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-text-wrapper {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 40px 20px;
+        backdrop-filter: blur(5px);
+        margin: 0 auto;
+        width: 90%;
+        max-width: 450px;
+        text-align: center;
+    }
+}
+
 .vert-line-container {
     position: absolute;
     top: 0;
@@ -1030,8 +1050,8 @@ h6 {
 /* Photography Portfolio */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-auto-rows: 280px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 200px;
     grid-auto-flow: dense;
     gap: 8px;
 }
@@ -1066,6 +1086,196 @@ h6 {
 .port-large {
     grid-column: span 2;
     grid-row: span 2;
+}
+
+/* Videography Portfolio */
+/* Videography Portfolio Swiper Styles */
+.video-swiper {
+    width: 100%;
+    padding: 0 0 60px 0;
+    overflow: hidden;
+    /* Prevent horizontal scrollbars */
+}
+
+.swiper-slide {
+    width: 60vw;
+    max-width: 700px;
+    height: 50vh;
+    min-height: 300px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
+    filter: brightness(0.4);
+    opacity: 0.5;
+    transform: scale(0.85);
+    /* Slightly smaller when not active */
+}
+
+/* Active Slide Styling */
+.swiper-slide-active {
+    filter: brightness(1);
+    opacity: 1;
+    transform: scale(1);
+    /* Full size when active */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    /* Ensure it stays on top of neighbors */
+}
+
+.swiper-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Video Text Overlay */
+.video-overlay-item {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 10;
+    text-align: left;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.3s;
+    /* Fade in slightly after active slide transition */
+}
+
+.swiper-slide-active .video-overlay-item {
+    opacity: 1;
+}
+
+.video-overlay-subtitle {
+    display: inline-block;
+    color: var(--primary);
+    /* Using primary color (red) */
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.video-overlay-title {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Play Button Overlay */
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.3s;
+    pointer-events: none;
+    /* Let clicks pass through if we add logic later, or make it clickable */
+}
+
+.swiper-slide-active .play-button-overlay {
+    opacity: 1;
+}
+
+.play-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.play-circle::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-left: 25px solid var(--primary);
+    /* Deep red triangle */
+    border-bottom: 15px solid transparent;
+    margin-left: 8px;
+    /* Offset to visually center the triangle */
+}
+
+.swiper-slide-active:hover .play-circle {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Custom Swiper Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Custom Pagination Dots */
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary);
+    width: 10px;
+    height: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-slide {
+        width: 85vw;
+        height: 40vh;
+        min-height: 250px;
+    }
+
+    .video-overlay-item {
+        top: 20px;
+        left: 20px;
+    }
+
+    .play-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .play-circle::after {
+        border-top: 10px solid transparent;
+        border-left: 18px solid var(--primary);
+        border-bottom: 10px solid transparent;
+        margin-left: 6px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+        /* Hide arrows on small mobile, rely on swipe */
+    }
 }
 
 /* Contact & Footer */
