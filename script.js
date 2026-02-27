@@ -35,6 +35,57 @@ document.addEventListener("DOMContentLoaded", () => {
     // Preloader and Hero Animations Timeline
     const tl = gsap.timeline();
 
+    // Showreel Playback Logic
+    const watchShowreelBtn = document.getElementById('watch-showreel-btn');
+    const heroVideo = document.querySelector('.hero-video');
+    const heroOverlay = document.querySelector('.hero-overlay');
+    const heroContent = document.querySelector('.hero-content');
+    const scrollIndicator = document.querySelector('.showreel-scroll-indicator');
+
+    if (watchShowreelBtn && heroVideo) {
+        watchShowreelBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Restart video and play with sound
+            heroVideo.currentTime = 0;
+            heroVideo.muted = false;
+            heroVideo.play();
+
+            // Hide overlay and content for better viewing
+            gsap.to([heroOverlay, heroContent, scrollIndicator], {
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                    heroOverlay.style.pointerEvents = 'none';
+                    heroContent.style.pointerEvents = 'none';
+                }
+            });
+
+            // Revert back when video ends or scrolls away
+            heroVideo.addEventListener('ended', revertHero);
+
+            // Revert on scroll
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > window.innerHeight * 0.2) {
+                    revertHero();
+                }
+            }, { once: true });
+
+            function revertHero() {
+                heroVideo.muted = true;
+                heroVideo.play();
+                gsap.to([heroOverlay, heroContent, scrollIndicator], {
+                    opacity: 1,
+                    duration: 0.5,
+                    onComplete: () => {
+                        heroOverlay.style.pointerEvents = 'auto';
+                        heroContent.style.pointerEvents = 'auto';
+                    }
+                });
+            }
+        });
+    }
+
     // Preloader Animation
     tl.fromTo(".preloader-text",
         { opacity: 0, scale: 0.8, letterSpacing: "40px", filter: "blur(10px)" },
