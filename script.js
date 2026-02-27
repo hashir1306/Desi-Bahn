@@ -43,15 +43,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollIndicator = document.querySelector('.showreel-scroll-indicator');
 
     if (watchShowreelBtn && heroVideo) {
+        let isShowreelActive = false;
+
         watchShowreelBtn.addEventListener('click', (e) => {
             e.preventDefault();
+            isShowreelActive = true;
 
-            // Restart video and play with sound
+            // Restart video, unmute and enable native controls
             heroVideo.currentTime = 0;
             heroVideo.muted = false;
+            heroVideo.controls = true;
+            heroVideo.style.display = 'block'; // Force show on mobile
+            const mobileBg = document.querySelector('.hero-mobile-bg');
+            if (mobileBg) mobileBg.style.display = 'none';
             heroVideo.play();
 
-            // Hide overlay and content for better viewing
+            // Hide overlay and content for clean viewing
             gsap.to([heroOverlay, heroContent, scrollIndicator], {
                 opacity: 0,
                 duration: 0.5,
@@ -61,29 +68,46 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
 
-            // Revert back when video ends or scrolls away
+            // Revert back when video ends
             heroVideo.addEventListener('ended', revertHero);
+        });
 
-            // Revert on scroll
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > window.innerHeight * 0.2) {
-                    revertHero();
-                }
-            }, { once: true });
-
-            function revertHero() {
-                heroVideo.muted = true;
-                heroVideo.play();
-                gsap.to([heroOverlay, heroContent, scrollIndicator], {
-                    opacity: 1,
-                    duration: 0.5,
-                    onComplete: () => {
-                        heroOverlay.style.pointerEvents = 'auto';
-                        heroContent.style.pointerEvents = 'auto';
-                    }
-                });
+        // Revert on scroll
+        window.addEventListener('scroll', () => {
+            if (isShowreelActive && window.scrollY > window.innerHeight * 0.2) {
+                revertHero();
             }
         });
+
+        function revertHero() {
+            if (!isShowreelActive) return;
+            isShowreelActive = false;
+
+            // Reset video to background mode
+            heroVideo.muted = true;
+            heroVideo.controls = false;
+            heroVideo.style.display = ''; // Revert to CSS default
+            const mobileBg = document.querySelector('.hero-mobile-bg');
+            if (mobileBg) mobileBg.style.display = '';
+            heroVideo.play();
+
+            // Hide native controls
+
+            // Exit fullscreen if active
+            if (document.fullscreenElement) {
+                document.exitFullscreen().catch(err => console.log(err));
+            }
+
+            // Bring back UI
+            gsap.to([heroOverlay, heroContent, scrollIndicator], {
+                opacity: 1,
+                duration: 0.5,
+                onComplete: () => {
+                    heroOverlay.style.pointerEvents = 'auto';
+                    heroContent.style.pointerEvents = 'auto';
+                }
+            });
+        }
     }
 
     // Preloader Animation
@@ -268,15 +292,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Optional: Auto-play the active video and pause others
+    // Pause videos when swiping away
     videoSwiper.on('slideChangeTransitionEnd', function () {
         const slides = document.querySelectorAll('.video-swiper .swiper-slide video');
         slides.forEach(v => v.pause());
         const activeSlide = document.querySelector('.video-swiper .swiper-slide-active video');
         if (activeSlide) {
-            // Reset active video to start and play
+            // Reset active video to start but do not auto-play
             activeSlide.currentTime = 0;
-            activeSlide.play().catch(e => console.log("Auto-play prevented"));
         }
+    });
+    // Read More functionality for reviews
+    const readMoreBtns = document.querySelectorAll('.read-more');
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const parent = e.target.parentElement;
+            const dots = parent.querySelector('.dots');
+            const moreText = parent.querySelector('.more-text');
+
+            if (moreText.style.display === "none" || moreText.style.display === "") {
+                moreText.style.display = "inline";
+                if (dots) dots.style.display = "none";
+                e.target.textContent = "Read less";
+            } else {
+                moreText.style.display = "none";
+                if (dots) dots.style.display = "inline";
+                e.target.textContent = "Read more";
+            }
+        });
     });
 });

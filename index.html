@@ -5,12 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desi Bahn | Visual Stories Without Borders</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- CSS -->
@@ -52,14 +48,19 @@
             <source src="video2.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <img src="images/homepage1.jpeg" alt="Desi Bahn Mobile Background" class="hero-mobile-bg">
         <div class="hero-overlay"></div>
+
+        <!-- Custom controls removed -->
 
         <div class="hero-content"
             style="align-items: flex-start; text-align: left; padding-top: 55vh; padding-bottom: 5vh; width: 100%;">
-            <h2 class="sub-headline reveal-text" style="padding-left: 0; margin-bottom: 5px;">Desi bahn productions
+            <h2 class="sub-headline reveal-text"
+                style="padding-left: 0; margin-bottom: 5px; font-size: clamp(1.5rem, 3.5vw, 2.8rem); font-weight: 700; font-family: var(--font-heading); letter-spacing: 2px; text-transform: uppercase;">
+                DESI BAHN PRODUCTIONS
             </h2>
             <h1 class="main-headline split-text reveal-text"
-                style="font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 10px;">Where imagination<br>becomes
+                style="font-size: clamp(1.5rem, 3.5vw, 2.8rem); margin-bottom: 10px;">Where imagination<br>becomes
                 motion.
             </h1>
             <p class="hero-desc reveal-text delay-2"
@@ -85,8 +86,8 @@
     <section class="pad-section" id="introduction" style="padding-bottom: 0;">
         <div class="container text-center">
             <div class="mobile-text-wrapper">
-                <h2 class="section-title fade-up" style="margin-bottom: 30px; line-height: 1.2;">Visual
-                    Stories<br>Without Borders</h2>
+                <h2 class="section-title fade-up" style="margin-bottom: 30px; line-height: 1.2; color: var(--gold);">
+                    Desi Bahn</h2>
                 <p class="section-body fade-up delay-1" style="max-width: 900px; color: rgba(255, 255, 255, 0.9);">
                     Desi Bahn is a Germany-based media production house. We are delivering high-quality photography,
                     videography, and digital content across Europe, the UK, Dubai, and India. From brand films and
@@ -95,9 +96,10 @@
                     and passion.
                 </p>
                 <div style="margin-top: 40px;">
-                    <p class="hero-impact fade-up delay-2" style="cursor: default; pointer-events: none;">
-                        Your vision. Our visuals. Global impact.
-                    </p>
+                    <a href="expertise.html" class="hero-impact fade-up delay-2">
+                        <span class="btn-main-text">Our Expertise</span>
+                        <span class="btn-hint">click to view</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -120,11 +122,8 @@
                     With international experience and multicultural expertise, we handle projects of every scale — from
                     intimate events to large commercial productions.
                 </p>
-                <div style="margin-top: 50px;">
-                    <a href="expertise.html" class="hero-impact fade-up delay-2">
-                        <span class="btn-main-text">Our Expertise</span>
-                        <span class="btn-hint">click to view</span>
-                    </a>
+                <div style="margin-top: 60px;">
+                    <a href="about.html" class="hero-impact slide-up">Know About Us</a>
                 </div>
             </div>
         </div>
@@ -226,19 +225,19 @@
             <div class="swiper video-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <video src="video1.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                        <video src="video1.mp4" loop controls playsinline preload="metadata"></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="video3.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                        <video src="video3.mp4" loop controls playsinline preload="metadata"></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="video4.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                        <video src="video4.mp4" loop controls playsinline preload="metadata"></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="video5.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                        <video src="video5.mp4" loop controls playsinline preload="metadata"></video>
                     </div>
                     <div class="swiper-slide">
-                        <video src="video6.mp4" autoplay loop controls playsinline preload="metadata"></video>
+                        <video src="video6.mp4" loop controls playsinline preload="metadata"></video>
                     </div>
                 </div>
 
@@ -251,24 +250,173 @@
         </div>
     </section>
 
-    <!-- Our Vision -->
-    <section class="vision pad-section" id="vision">
-        <div class="container flex-center">
-            <div class="vision-text-wrapper mobile-text-wrapper">
-                <div class="watermark-text" aria-hidden="true">VISION</div>
-                <h2 class="section-title slide-right">Our Vision</h2>
-                <div class="gold-separator fade-in"></div>
-                <p class="section-body slide-up">
-                    To become a trusted global media partner for brands and individuals by producing meaningful,
-                    creative, and visually powerful content that inspires audiences everywhere.
-                </p>
-                <div style="margin-top: 60px;">
-                    <a href="about.html" class="hero-impact slide-up">Know About Us</a>
+    <!-- How We Work -->
+    <section class="how-we-work pad-section" id="how-we-work">
+        <div class="container">
+            <h2 class="section-title text-center fade-up" style="margin-bottom: 60px;">How we work</h2>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Item 1 -->
+                <div class="timeline-item left fade-up">
+                    <div class="timeline-content">
+                        <h3>Project Brief & Inquiry</h3>
+                        <p>We begin by understanding your goals, vision, timeline, and budget. Once the project scope,
+                            date, and location are confirmed, we move forward with planning and scheduling.</p>
+                    </div>
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-spacer"></div>
                 </div>
+
+                <!-- Item 2 -->
+                <div class="timeline-item right fade-up delay-1">
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <h3>Consultation & Strategy</h3>
+                        <p>An in-depth discussion to define creative direction, brand positioning, and content
+                            requirements. This includes technical guidance and a customized production plan.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="timeline-item left fade-up">
+                    <div class="timeline-content">
+                        <h3>Creative Alignment</h3>
+                        <p>We collaborate with you to finalize the concept, visual style, deliverables, and key
+                            production details to ensure everything aligns with your brand vision.</p>
+                    </div>
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-spacer"></div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="timeline-item right fade-up delay-1">
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content">
+                        <h3>Agreement & Initial Payment</h3>
+                        <p>The project is formalized through an agreement or invoice. An advance payment (typically
+                            30–50%) is required to reserve production resources and begin development.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="timeline-item left fade-up">
+                    <div class="timeline-content">
+                        <h3>Creative Development</h3>
+                        <p>Concept creation, scripting, storyboarding, and mood boards are prepared (if required). Final
+                            timeline and production schedule are approved by the client.</p>
+                    </div>
+                    <div class="timeline-dot">5</div>
+                    <div class="timeline-spacer"></div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="timeline-item right fade-up delay-1">
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot">6</div>
+                    <div class="timeline-content">
+                        <h3>Pre-Production & Filming</h3>
+                        <p>Our team handles full production setup including crew, equipment, locations, models/talent,
+                            styling, and logistics. Filming is executed professionally and efficiently.</p>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="timeline-item left fade-up">
+                    <div class="timeline-content">
+                        <h3>Post-Production & Review</h3>
+                        <p>Editing starts immediately after filming. A first draft is shared for your feedback, and
+                            revisions are made until the final version is approved.</p>
+                    </div>
+                    <div class="timeline-dot">7</div>
+                    <div class="timeline-spacer"></div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="timeline-item right fade-up delay-1">
+                    <div class="timeline-spacer"></div>
+                    <div class="timeline-dot">8</div>
+                    <div class="timeline-content">
+                        <h3>Final Delivery & Payment</h3>
+                        <p>Upon final approval, the remaining payment is completed and all deliverables are shared in
+                            high resolution through your preferred delivery method.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
+
+    <!-- Client Reviews -->
+    <section class="reviews pad-section" id="reviews">
+        <div class="container">
+            <h2 class="section-title text-center fade-up">Client Reviews</h2>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card fade-up">
+                    <img src="images/placeholder1.jpeg" alt="Sarah Jennings" class="review-img"
+                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\'><rect width=\'120\' height=\'120\' fill=\'#222\'/></svg>'">
+                    <div class="review-content">
+                        <h4>Sarah Jennings</h4>
+                        <p class="review-role">Event Director "LUMINA CREATIVES"</p>
+                        <p class="review-text">I have been fortunate to work with the Desi Bahn team and I can
+                            confidently say
+                            that they are exceptional at photography and videography for large-scale events and
+                            corporate
+                            gatherings.<span class="dots">...</span><span class="more-text"> Desi Bahn stands out not
+                                only for their technical skills, but also for their ease of communication, flexibility
+                                and ability to listen to my needs. They are friendly and professional, which makes the
+                                work process smooth and enjoyable. Their team is not only experienced, but also truly
+                                understands the intricacies of the industry, ensuring that each visual material
+                                accurately reflects the essence of the story.</span></p>
+                        <a href="#" class="read-more" onclick="event.preventDefault();">Read more</a>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card fade-up delay-1">
+                    <img src="images/placeholder2.jpeg" alt="Ahmed Al Fayed" class="review-img"
+                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\'><rect width=\'120\' height=\'120\' fill=\'#222\'/></svg>'">
+                    <div class="review-content">
+                        <h4>Ahmed Al Fayed</h4>
+                        <p class="review-role">Marketing Head "OASIS LUXURY RESORTS"</p>
+                        <p class="review-text">Working with Desi Bahn was a pleasant experience from start to finish.
+                            We trusted them to create a promotional brand film that would reflect the luxury of our
+                            resort,
+                            and the result exceeded all expectations. Their ability to highlight the elegance of our
+                            interiors and convey<span class="dots">...</span><span class="more-text"> the unique
+                                atmosphere of our spaces is truly remarkable. They managed every detail with precision
+                                and delivered a final product that perfectly aligns with our brand's high standards. I
+                                look forward to working with them on our next major campaign.</span></p>
+                        <a href="#" class="read-more" onclick="event.preventDefault();">Read more</a>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card fade-up delay-2">
+                    <img src="images/placeholder3.jpeg" alt="Rohan Patel" class="review-img"
+                        onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'120\' height=\'120\'><rect width=\'120\' height=\'120\' fill=\'#222\'/></svg>'">
+                    <div class="review-content">
+                        <h4>Rohan Patel</h4>
+                        <p class="review-role">Founder "ELEVATE EXPERIENCES"</p>
+                        <p class="review-text">Entering the competitive digital market, it was very important for me to
+                            stand out among the masses and emphasize the quality of my team's work. I have worked and
+                            will
+                            continue to work with Desi Bahn to bring high-quality, professional visuals to life.<span
+                                class="dots">...</span><span class="more-text"> Their creativity and technical expertise
+                                are unmatched, and they have been instrumental in elevating our brand's overall digital
+                                presence. I highly recommend them to anyone seeking to create impactful media.</span>
+                        </p>
+                        <a href="#" class="read-more" onclick="event.preventDefault();">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact & Footer -->
     <footer class="contact-footer pad-section" id="contact">
