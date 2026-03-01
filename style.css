@@ -1422,12 +1422,12 @@ h6 {
 }
 
 .contact-socials a {
-    color: var(--white);
+    color: var(--gold);
     transition: color 0.3s, transform 0.3s;
 }
 
 .contact-socials a:hover {
-    color: var(--gold);
+    color: var(--white);
     transform: translateY(-3px);
 }
 
