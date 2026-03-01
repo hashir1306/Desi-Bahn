@@ -111,12 +111,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Preloader Animation
-    tl.fromTo(".preloader-text",
-        { opacity: 0, scale: 0.8, letterSpacing: "40px", filter: "blur(10px)" },
-        { opacity: 1, scale: 1, letterSpacing: "15px", filter: "blur(0px)", duration: 1.6, ease: "power4.out" }
-    )
+    tl.set(".preloader-text", { opacity: 1 })
+        .fromTo(".desi-text .letter",
+            { opacity: 0, y: 15 },
+            { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power2.out" }
+        )
+        .fromTo(".bahn-text",
+            { opacity: 0, filter: "blur(4px)" },
+            { opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "power2.out" },
+            "-=0.1"
+        )
         .to(".preloader-text",
-            { opacity: 0, scale: 1.1, letterSpacing: "25px", filter: "blur(5px)", duration: 0.8, ease: "power3.in", delay: 0.8 }
+            { opacity: 0, scale: 1.05, duration: 0.7, ease: "power2.inOut", delay: 0.6 }
         )
         .to(".preloader",
             { y: "-100%", duration: 1.2, ease: "power4.inOut" }
