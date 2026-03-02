@@ -112,14 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Preloader Animation
     tl.set(".preloader-text", { opacity: 1 })
-        .fromTo(".desi-text .letter",
-            { opacity: 0, y: 15 },
-            { opacity: 1, y: 0, duration: 0.6, stagger: 0.12, ease: "power2.out" }
-        )
-        .fromTo(".bahn-text",
-            { opacity: 0, filter: "blur(4px)" },
-            { opacity: 1, filter: "blur(0px)", duration: 1.0, ease: "power2.out" },
-            "-=0.1"
+        // Create the wipe reveal effect left to right
+        .fromTo(".preloader-logo",
+            { opacity: 1, clipPath: 'inset(0% 100% 0% 0%)', scale: 1 },
+            { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: "slow(0.7, 0.7, false)" }
         )
         .to(".preloader-text",
             { opacity: 0, scale: 1.05, duration: 0.7, ease: "power2.inOut", delay: 0.6 }
