@@ -112,10 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Preloader Animation
     tl.set(".preloader-text", { opacity: 1 })
-        // Create the wipe reveal effect left to right
+        // Create a cinematic blur and scale reveal effect
         .fromTo(".preloader-logo",
-            { opacity: 1, clipPath: 'inset(0% 100% 0% 0%)', scale: 1 },
-            { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: "slow(0.7, 0.7, false)" }
+            { opacity: 0, scale: 0.5, filter: "blur(20px)" },
+            { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.8, ease: "power3.out" }
         )
         .to(".preloader-text",
             { opacity: 0, scale: 1.05, duration: 0.7, ease: "power2.inOut", delay: 0.6 }
