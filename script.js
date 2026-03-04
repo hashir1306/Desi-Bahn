@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
             { opacity: 0, scale: 1.05, duration: 0.5, ease: "power2.inOut", delay: 0.3 }
         )
         .to(".preloader",
-            { y: "-100%", duration: 0.8, ease: "power4.inOut" }
+            { opacity: 0, scale: 0.9, duration: 0.8, ease: "power3.inOut" }
         )
         .set(".preloader", { display: "none" });
 

@@ -1508,10 +1508,16 @@ h6 {
 .footer-minimal {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 30px;
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
     color: var(--grey);
     font-size: 0.8rem;
+    text-align: center;
 }
+
 
 /* Responsive */
 @media screen and (max-width: 900px) {
@@ -1627,6 +1633,8 @@ h6 {
 
     .footer-minimal {
         text-align: center;
+        flex-direction: column-reverse;
+        gap: 15px;
     }
 
     .navbar,
