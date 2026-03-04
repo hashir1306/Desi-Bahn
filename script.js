@@ -115,13 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // Create a cinematic blur and scale reveal effect
         .fromTo(".preloader-logo",
             { opacity: 0, scale: 0.5, filter: "blur(20px)" },
-            { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.8, ease: "power3.out" }
+            { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.0, ease: "power3.out" }
         )
         .to(".preloader-text",
-            { opacity: 0, scale: 1.05, duration: 0.7, ease: "power2.inOut", delay: 0.6 }
+            { opacity: 0, scale: 1.05, duration: 0.5, ease: "power2.inOut", delay: 0.3 }
         )
         .to(".preloader",
-            { y: "-100%", duration: 1.2, ease: "power4.inOut" }
+            { y: "-100%", duration: 0.8, ease: "power4.inOut" }
         )
         .set(".preloader", { display: "none" });
 

@@ -1629,8 +1629,17 @@ h6 {
         text-align: center;
     }
 
-    .navbar {
-        padding: 20px var(--pad-x);
+    .navbar,
+    .navbar.scrolled {
+        padding: 20px 15px 20px 0;
+    }
+
+    .brand-logo {
+        margin-left: -20px;
+    }
+
+    .brand-logo img {
+        transform: scale(2.6) !important;
     }
 
     .menu-toggle {
